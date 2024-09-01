@@ -1,0 +1,184 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, black 20%, rgba(0,0,0,0) 65%) no-repeat;
+}
+
+.pokemon {
+    display: none;
+    height: 100vh;
+}
+
+.pokemon.selecionado {
+    display: block;
+}
+
+.pokemon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-pokemon {
+    font-family: "Secular One", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.conteudo .tipo1 {
+    background-image: url("../img/grass.png");
+    background-size: cover;
+    height: 27px;
+    width: 36%;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.conteudo .tipo2 {
+    background-image: url("../img/fire.png");
+    background-size: cover;
+    height: 27px;
+    width: 36%;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.conteudo .descricao {
+    font-family: "rubik", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.conteudo .logo {
+    background-image: url("../img/logo.png");
+    background-size: cover;
+    height: 150px;
+    width: 250px;
+    margin-bottom: 25px;
+}
+
+.botoes {
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: black;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+.botao::before {
+    content: "";
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+    background: black;
+}
+
+.botao:active {
+    color: #000
+}
+
+.botao:active:after {
+    background: transparent;
+}
+
+.botao:hover:before {
+    opacity: 1;
+}
+
+.botao:after {
+    border: none;
+    background: black;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes borderGradient {
+    0% {
+        border-image-slice: 1;
+        border-image-source: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000);
+    }
+    25% {
+        border-image-slice: 2;
+    }
+    50% {
+        border-image-slice: 3;
+    }
+    75% {
+        border-image-slice: 4;
+    }
+    100% {
+        border-image-slice: 1;
+        transform: rotate(360deg);
+        border-image-source: linear-gradient(45deg, #ffff00, #00ff00, #0099ff, #001aff, #a200ff, #ff0055, #ff0000);
+    }
+}

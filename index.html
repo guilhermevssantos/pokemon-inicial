@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+
+    <link rel="icon" href="./src/img/pokeball-icon.png" type="image/x-icon">
+
+    <title>Escolha seu Pokémon inicial!</title>
+
+</head>
+
+<body>
+
+    <main class="pokemons">
+        <div class="pokemon">
+            <img class="imagem" src="./src/img/pokemon-bulbasaur.png" alt="Bulbasaur">
+            <div class="conteudo">
+                <i class="logo"></i>
+                <h2 class="nome-pokemon">Bulbasaur</h2>
+                <img class="tipo1" src="./src/img/grass.png" alt="Planta">
+                <img class="tipo2" src="./src/img/poison.png" alt="Venenoso">
+                <p class="descricao">Ele carrega a semente de uma planta nas costas desde o nascimento. A semente se
+                    desenvolve lentamente. Os pesquisadores não têm certeza se devem classificar Bulbasaur como planta
+                    ou animal.
+                </p>
+            </div>
+        </div>
+
+        <div class="pokemon selecionado">
+            <img class="imagem" src="./src/img/pokemon-charmander.jpg" alt="Charmander">
+            <div class="conteudo">
+                <i class="logo"></i>
+                <h2 class="nome-pokemon">Charmander</h2>
+                <img class="tipo1" src="./src/img/fire.png" alt="Fogo">
+                <p class="descricao">A chama que arde na ponta da sua cauda é uma indicação de suas emoções. A chama
+                    oscila quando o Charmander está se divertindo. Se o Pokémon ficar furioso, a chama arde ferozmente.
+                </p>
+            </div>
+        </div>
+
+        <div class="pokemon">
+            <img class="imagem" src="./src/img/pokemon-squirtle.png" alt="Squirtle">
+            <div class="conteudo">
+                <i class="logo"></i>
+                <h2 class="nome-pokemon">Squirtle</h2>
+                <img class="tipo1" src="./src/img/water.png" alt="Água">
+                <p class="descricao">Este pequeno Pokémon Tartaruga retrai seu longo pescoço para dentro de sua concha
+                    para lançar incríveis ataques de água com alcance e precisão incríveis. As explosões podem ser
+                    bastante poderosas.
+                </p>
+            </div>
+        </div>
+    </main>
+    <ul class="botoes">
+        <li>
+            <button class="botao" id="bulbasaur">
+                <img src="./src/img/bulbasaur.gif" alt="Bulbasaur">
+            </button>
+        </li>
+
+        <li>
+            <button class="botao selecionado" id="charmander">
+                <img src="./src/img/charmander.gif" alt="Charmander">
+            </button>
+        </li>
+
+        <li>
+            <button class="botao" id="squirtle">
+                <img src="./src/img/squirtle.gif" alt="Squirtle">
+            </button>
+        </li>
+    </ul>
+
+<script src="./src/js/script.js"></script>
+
+</body>
+
+</html>
